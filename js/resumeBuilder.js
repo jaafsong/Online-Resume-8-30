@@ -108,8 +108,6 @@ work.display = function() {
 
     for (var i = 0; i < workJobsArray.length; i++) {
 
-        //for (var job in work.jobs) {
-
         $("#workExperience").append(HTMLworkStart);
 
         var formattedEmployer = HTMLworkEmployer.replace(data, workJobsArray[i].employer);
