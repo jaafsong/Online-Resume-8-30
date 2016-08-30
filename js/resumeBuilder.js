@@ -1,3 +1,4 @@
+
 var bio = {
     "name": "Jeffrey Song",
     "role": "Web Developer",
@@ -146,7 +147,8 @@ displayWork();
 
 projects.display = function() {
     for (var info in projects.projects) {
-        if (info === true) {
+        if (projects.projects.length > 0) {
+
             $("#projects").append(HTMLprojectStart);
 
             var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[info].title);
@@ -160,8 +162,9 @@ projects.display = function() {
 
 
             if (projects.projects[info].images.length > 0) {
+
                 for (var image in projects.projects[info].images) {
-                    if (image === true) {
+                    if (projects.projects[info].images.length > 0) {
                         var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[info].images[image]);
                         $(".project-entry:last").append(formattedImage);
                     }
@@ -177,12 +180,13 @@ projects.display();
 education.display = function() {
 
     for (var details in education.schools) {
-        if (details === true) {
+        if (education.schools.length > 0) {
 
             $("#education").append(HTMLschoolStart);
 
             var formattedName = HTMLschoolName.replace("%data%", education.schools[details].name);
             $(".education-entry:last").append(formattedName);
+
             var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[details].degree);
             $(".education-entry:last").append(formattedDegree);
 
